@@ -21,3 +21,19 @@ public:
         return true;
     }
 };
+
+class Solution
+{
+public:
+    int findRepeatNumber(vector<int> &nums)
+    {
+        for ( const auto &i : nums)
+        {
+            if(m_set.find(i) == m_set.end())
+                m_set.insert(i);
+            else
+                return i;
+        }
+    }
+    set<int> m_set;
+};
