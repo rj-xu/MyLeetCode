@@ -14,9 +14,13 @@ public:
         {
             auto iter = m.find(target - nums[i]);
             if (iter != m.end())
+            {
                 return {iter->second, i};
+            }
             else
+            {
                 m[nums[i]] = i;
+            }
         }
         return {};
     }
