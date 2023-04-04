@@ -10,20 +10,18 @@ public:
         int new_size = s.size() + count(s.begin(), s.end(), ' ') * 2;
         s.resize(new_size);
 
-        for(int i = 0 , j = 0; i < size; i++, j++)
+        for(int i = size - 1 , j = new_size - 1; i >= 0; i--, j--)
         {
-            char c = s[size - 1 -i];
+            char c = s[i];
             if(c != ' ')
              {
-                s[new_size - 1 -j] = c;
+                s[j] = c;
              }
             else
             {
-                s[new_size - 1 -j] = '0';
-                j++;
-                s[new_size - 1 -j] = '2';
-                j++;
-                s[new_size - 1 -j] = '%';
+                s[j--] = '0';
+                s[j--] = '2';
+                s[j] = '%';
             }
         }
         return s;
