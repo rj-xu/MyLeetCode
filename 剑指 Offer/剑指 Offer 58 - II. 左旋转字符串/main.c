@@ -25,3 +25,34 @@ int main()
 
     printf("%s", r);
 }
+
+
+void reverse(char *s, int n)
+{
+    for (int i = 0; i < n / 2; i++)
+    {
+        char temp = s[i];
+        s[i] = s[n - 1 -i];
+        s[n - 1 -i] = temp;
+    }
+}
+
+char *reverseLeftWords(char *s, int n)
+{
+
+    int len = strlen(s);
+
+    reverse(s, n);
+    reverse(s + n, len - n);
+    reverse(s, len);
+
+    return s;
+}
+
+int main()
+{
+    char s[] = "abcdefg";
+    char *r = reverseLeftWords(s, 2);
+
+    printf("%s", r);
+}
