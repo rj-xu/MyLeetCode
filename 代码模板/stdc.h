@@ -93,7 +93,7 @@ typedef int8_t s8;
 
 
 // DATA STRUCTURE
-typedef struct ListNode
+typedef struct
 {
     int val;
     struct ListNode *next;
@@ -106,7 +106,7 @@ static inline struct ListNode *CreateList(int *a, int len)
 
     for (int i = 0; i < len; i++)
     {
-        p->next = malloc(sizeof(struct ListNode));
+        p->next = (ListNode_t *)malloc(sizeof(ListNode_t));
         p->next->val = a[i];
         p->next->next = NULL;
         p = p->next;
@@ -115,7 +115,7 @@ static inline struct ListNode *CreateList(int *a, int len)
     return preHead->next;
 }
 
-typedef struct Vector
+typedef struct
 {
     uint32_t num;
     uint8_t *data;
