@@ -1,0 +1,19 @@
+// 28. 找出字符串中第一个匹配项的下标
+// 给你两个字符串 haystack 和 needle ，请你在 haystack 字符串中找出 needle 字符串的第一个匹配项的下标（下标从 0 开始）。
+// 如果 needle 不是 haystack 的一部分，则返回  -1 。
+
+int strStr(char *haystack, char *needle)
+{
+    int len1 = strlen(haystack);
+    int len2 = strlen(needle);
+
+    for (int i = 0; i < len1;)
+    {
+        if (haystack[i] == needle[0] && strncmp(&haystack[i], needle, len2) == 0)
+            return i;
+        else
+            i += len2;
+    }
+
+    return -1;
+}
