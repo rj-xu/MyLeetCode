@@ -7,12 +7,10 @@ int strStr(char *haystack, char *needle)
     int len1 = strlen(haystack);
     int len2 = strlen(needle);
 
-    for (int i = 0; i < len1;)
+    for (int i = 0; i < len1; i++)
     {
-        if (haystack[i] == needle[0] && strncmp(&haystack[i], needle, len2) == 0)
+        if (strncmp(&haystack[i], needle, len2) == 0)
             return i;
-        else
-            i += len2;
     }
 
     return -1;
