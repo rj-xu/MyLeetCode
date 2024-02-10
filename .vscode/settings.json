@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "stdc.h": "c",
+        "random": "c"
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true
+}
